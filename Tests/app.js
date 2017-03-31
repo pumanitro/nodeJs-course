@@ -1,2 +1,3 @@
 
-require('./hello.js');
+var greet = require('./hello.js');
+greet();
