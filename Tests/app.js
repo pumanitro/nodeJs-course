@@ -24,3 +24,6 @@ grtr.greeting = "The newest greets :D";
 
 var grtrC = new Greet4();
 grtrC.greet();
+
+var greet5 = require('./hello5').greet;
+greet5();
