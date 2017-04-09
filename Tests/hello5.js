@@ -10,4 +10,4 @@ function greet(){
 
 module.exports = {
     greet: greet
-}
+};
