@@ -2,7 +2,7 @@
  * Created by puman on 09.04.2017.
  */
 
-var Emitter = require('./emitter');
+var Emitter = require('events');
 var emtr = new Emitter();
 
 emtr.on('greet', function(){
