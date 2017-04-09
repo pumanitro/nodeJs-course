@@ -5,12 +5,14 @@
 var Emitter = require('events');
 var emtr = new Emitter();
 
-emtr.on('greet', function(){
+var eventConfig = require('./config').events;
+
+emtr.on(eventConfig.GREET, function(){
     console.log('Just next hello :)')
 });
 
-emtr.on('greet', function(){
+emtr.on(eventConfig.GREET, function(){
    console.log('After welcome !');
 });
 
-emtr.emit('greet');
+emtr.emit(eventConfig.GREET);
