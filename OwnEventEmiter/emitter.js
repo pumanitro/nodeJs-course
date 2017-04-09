@@ -6,6 +6,19 @@ function Emitter(){
     this.events = {};
 }
 
-Emiter.prototype.on = function(type, listener){
+Emitter.prototype.on = function(type, listener){
+    //Make sure type is an array :
+    this.events[type] = this.events[type] || [];
+    this.events[type].push(listener);
 
-}
+};
+
+Emitter.prototype.emit = function(type){
+    if(this.events[type]){
+        this.events[type].forEach(function(listener){
+            listener();
+        });
+    }
+};
+
+module.exports = Emitter;
