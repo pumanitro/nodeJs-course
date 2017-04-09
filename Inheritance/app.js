@@ -8,10 +8,10 @@ const util = require('util');
 class Greetr extends EventEmitter{
     constructor(){
         super();
-        this.greeting = 'Hello world!';
+        this.greeting = `Hello`;
     }
     greet(data) {
-        console.log(`I will emit data : ${this.greeting}`);
+        console.log(`Before greet emiting : ${this.greeting} ${data}`);
         this.emit('greet',data);
     }
 }
@@ -19,10 +19,10 @@ class Greetr extends EventEmitter{
 let greeter = new Greetr();
 
 greeter.on('greet',function(data){
-   console.log(`Im greet function. Thats my greetings : ${data}`);
+   console.log(`Im greet function. Thats my data : ${data}`);
 });
 
-greeter.greet();
+greeter.greet('Tony');
 
 
 
