@@ -16,7 +16,7 @@ http.createServer(function (req,res) {
         res.writeHead(200, {'Content-Type' : 'application/json'});
 
         var obj = {
-            firstName: 'Patryk',
+            firstName: 'Nodemon',
             lastName: 'Janik',
             job: 'Master of WEB DEVELOPMENT :D'
         };
