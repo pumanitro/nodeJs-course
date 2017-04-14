@@ -4,8 +4,11 @@
 
 const express = require('express');
 let app = express();
+let bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3000;
+let urlencodedParser = bodyParser.urlencoded({ extended: false });
+let jsonParser = bodyParser.json();
 
 app.use('/assets', express.static('public'));
 
@@ -34,6 +37,18 @@ app.get('/person/:id', function(req,res){
             ID: req.params.id,
             Qstr: req.query.qstr
         })
+});
+
+app.post('/person', urlencodedParser, function(req,res){
+    res.send('Thank you!');
+    console.log(req.body.firstName);
+    console.log(req.body.lastName);
+});
+
+app.post('/person-json', jsonParser, function(req,res){
+    res.send('Thank you for the JSON data!');
+    console.log(req.body.firstName);
+    console.log(req.body.lastName);
 });
 
 app.listen(port);
