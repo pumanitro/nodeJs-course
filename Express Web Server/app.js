@@ -31,7 +31,8 @@ app.get('/api',function (req,res) {
 app.get('/person/:id', function(req,res){
     res.render('persons',
         {
-            ID:req.params.id
+            ID: req.params.id,
+            Qstr: req.query.qstr
         })
 });
 
